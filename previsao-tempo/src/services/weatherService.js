@@ -9,7 +9,7 @@ export async function searchCity (cidade){
             throw new Error(errorData.message || "Ocorreu um erro ao buscar os dados.");
         }
         
-        const {main , weather , wind , name , sys} = resData;
+        const {main , weather , wind , name , sys , visibility} = resData;
 
         const processedData = {
             cidade: name,
@@ -18,7 +18,9 @@ export async function searchCity (cidade){
             temperatura_max : main.temp_max,
             temperatura_min : main.temp_min,
             sensacaoTermica: main.feels_like,
+            visibilidade: (visibility * 0.001),
             umidade: main.humidity,
+            pressao : main.pressure,
             velocidadeVento: wind.speed,
             tempo : weather[0].main,
             descricao: weather[0].description,
