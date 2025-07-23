@@ -1,12 +1,13 @@
-import InputProvider from "../store/inputContext";
-import Input from "./common/input/input";
+import WeatherProvider from "../store/weatherContext";
+import InputProvider from "../store/weatherContext";
+import Header from "./layout/header/header";
 
 export default function App (){
     return (
-        <InputProvider>
+        <WeatherProvider>
             <section>
-                <Input/>
+                <Header/>
             </section>
-        </InputProvider>
+        </WeatherProvider>
     )
 }
