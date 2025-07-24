@@ -2,12 +2,14 @@ import { useContext, useState } from "react";
 import Input from "../../common/input/input";
 import { WeatherContext } from "../../../store/weatherContext";
 import '../header/header.scss'
+import Loading from "../../common/loading/loading";
+
 
 export default function Header (){
     const {weatherData, isLoading ,error, handleFetchWeather} = useContext(WeatherContext);
 
     if (isLoading) {
-        return <p>Carregando...</p>;
+        return <Loading/>
     }
 
     return (
