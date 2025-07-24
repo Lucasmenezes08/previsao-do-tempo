@@ -48,36 +48,45 @@ export default function Header (){
                 </section>
             </section>
 
+            <section className="header-dados-section-template">
+ 
+                <section className="header-dados-section" >
+                    <p className="header-dados-title">Dados do tempo</p>
 
-            <section>
-                <p>Dados do tempo</p>
+                    <section className="header-dados-grid">
+                        <section className="header-dados-sensacaotermica">
+                            <p>Sensação térmica</p>
+                            {!isLoading && !error && weatherData && ( <p>{weatherData.sensacaoTermica.toFixed(0)}º</p>)}
+                        </section>
 
-                <section>
-                    <p>Sensação térmica</p>
-                    {!isLoading && !error && weatherData && ( <p>{weatherData.sensacaoTermica.toFixed(0)}º</p>)}
+                        <section className="header-dados-visibilidade">
+                            <p>Visibilidade</p>
+                            {!isLoading && !error && weatherData && ( <p>{weatherData.visibilidade} Km</p>)}
+                        </section>
+
+                        <section className="header-dados-pressao">
+                            <p>Pressão</p>
+                            {!isLoading && !error && weatherData && ( <p>{weatherData.pressao} hPa</p>)}
+                        </section>
+
+
+                        <section className="header-dados-umidade">
+                            <p>Umidade</p>
+                            {!isLoading && !error && weatherData && ( <p>{weatherData.umidade} %</p>)}
+                        </section>
+
+                        <section className="header-dados-velocidadedovento">
+                            <p>Velocidade do vento</p>
+                            {!isLoading && !error && weatherData && ( <p>{weatherData.velocidadeVento.toFixed(1)} km/h</p>)}
+                        </section>
+
+                         <section className="header-dados-velocidadedovento">
+                            <p>nuvens</p>
+                            {!isLoading && !error && weatherData && ( <p>{weatherData.nuvens} %</p>)}
+                        </section>
+
+                    </section>
                 </section>
-
-                <section>
-                    <p>Visibilidade</p>
-                    {!isLoading && !error && weatherData && ( <p>{weatherData.visibilidade} Km</p>)}
-                </section>
-
-                <section>
-                    <p>Pressão</p>
-                    {!isLoading && !error && weatherData && ( <p>{weatherData.pressao} hPa</p>)}
-                </section>
-
-
-                <section>
-                    <p>Umidade</p>
-                    {!isLoading && !error && weatherData && ( <p>{weatherData.umidade} %</p>)}
-                </section>
-
-                <section>
-                    <p>Velocidade do vento</p>
-                    {!isLoading && !error && weatherData && ( <p>{weatherData.velocidadeVento.toFixed(1)} km/h</p>)}
-                </section>
-
             </section>
         </header>
     )

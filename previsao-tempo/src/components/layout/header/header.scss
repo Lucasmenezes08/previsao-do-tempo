@@ -12,6 +12,7 @@ header {
         padding-top: 12px;
         font-size: variables.$font-h1-size;
         text-align: center;
+        letter-spacing: 1px;
         
     }
 
@@ -36,11 +37,13 @@ header {
             h2{
                 font-size: 2.3rem;
                 color: variables.$font-primary-color;
+                letter-spacing: 1px;
             }
             p{
                 font-size: 1.2rem;
                 color: variables.$font-second-color;
                 margin-bottom: 2rem;
+                letter-spacing: 1px;
             }
         }
 
@@ -92,6 +95,66 @@ header {
 
 
     }
+
+
+    .header-dados-section-template {
+        width: 100%;
+        padding: 0 15px;
+
+    
+
+
+        .header-dados-section {
+            display: flex;
+            flex-direction: column;
+            margin-top: 3rem;
+            background-color: variables.$input-primary-color;
+            padding: 20px;
+            border-radius: 10px;
+            padding-left: 30px ;
+
+
+            .header-dados-title {
+                color: variables.$font-primary-color;
+                font-size: 1.4rem;
+                font-weight: 600;
+                margin-bottom: 1.8rem;
+                text-align: left; 
+                letter-spacing: 1.3px;
+                padding-top: 10px;
+            }
+
+
+            .header-dados-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1.3rem;
+
+                section {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.3rem;
+
+
+                    p:nth-child(1) {
+                        color: variables.$font-second-color;
+                        font-size: 1.1rem;
+                    }
+
+                    p:nth-child(2) {
+                        color: variables.$font-primary-color;
+                        font-size: 1.2rem;
+                    }
+            
+                }
+
+               
+
+            }
+
+        }
+    }
+    
 
 
     

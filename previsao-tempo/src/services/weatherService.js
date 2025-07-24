@@ -10,7 +10,7 @@ export async function searchCity (cidade){
         }
         const resData = await response.json()
         
-        const {main , weather , wind , name , sys , visibility} = resData;
+        const {main , weather , wind , name , sys , visibility, clouds} = resData;
 
         const processedData = {
             cidade: name,
@@ -26,6 +26,7 @@ export async function searchCity (cidade){
             tempo : weather[0].main,
             descricao: weather[0].description,
             icone: weather[0].icon,
+            nuvens: clouds.all,
         };
         
         console.log(resData);
