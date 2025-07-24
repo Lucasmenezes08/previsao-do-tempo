@@ -6,8 +6,13 @@ import '../header/header.scss'
 export default function Header (){
     const {weatherData, isLoading ,error, handleFetchWeather} = useContext(WeatherContext);
 
+    if (isLoading) {
+        return <p>Carregando...</p>;
+    }
+
     return (
         <header>
+            
             <h1>Tempo</h1>
             
             <section className="header-input-section">
@@ -23,19 +28,21 @@ export default function Header (){
                 <section className="weather-temperatura">
                     {!isLoading && !error && weatherData && ( <p>{weatherData.temperatura.toFixed(0)}<span className="weather-span">º</span></p>)}
                 </section>
+
+        
             </section>
 
 
             <section className="header-weather-max-min-section">
                 <section className="weather-temperatura-min">
                     {!isLoading && !error && weatherData && ( <p>{weatherData.temperatura_min.toFixed(1)}º</p>)}
-                    <p>min</p>
+                    {!isLoading && !error && weatherData && (<p>mín</p>)}
                 </section>
 
 
                 <section className="weather-temperatura-max">
                     {!isLoading && !error && weatherData && ( <p>{weatherData.temperatura_max.toFixed(1)}º</p>)}
-                    <p>max</p>
+                    {!isLoading && !error && weatherData && (<p>max</p>)}
                 </section>
             </section>
 

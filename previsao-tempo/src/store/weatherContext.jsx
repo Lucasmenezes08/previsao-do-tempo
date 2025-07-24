@@ -8,6 +8,7 @@ export default function WeatherProvider ({children}){
     const [weatherData , setWeatherData] = useState(null);
     const [isLoading , setIsLoading] = useState(true);
     const [error , setError] = useState(null);
+    const [currentlyCity , setCurrentlyCity] = useState('recife');
 
     async function handleFetchWeather (city){
         setIsLoading(true)
@@ -16,11 +17,13 @@ export default function WeatherProvider ({children}){
         try{
             const data = await searchCity(city);
             setWeatherData(data);
+            setCurrentlyCity(city)
         }
 
         catch (err){
             setError(err.message)
             setWeatherData(null);
+           
         }
 
         finally {
@@ -29,11 +32,21 @@ export default function WeatherProvider ({children}){
         
     }
 
-
     useEffect (() => {
-        handleFetchWeather('recife')
+        handleFetchWeather('recife');
     }, [])
 
+
+    /*
+    useEffect (() => {
+        const weatherInterval = setInterval(() => {
+            handleFetchWeather(currentlyCity);
+        } , 7200000)
+
+
+        return () => clearInterval(weatherInterval)
+    } , [currentlyCity]);
+    */
 
     const value = {
         weatherData,

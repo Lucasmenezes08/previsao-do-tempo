@@ -4,10 +4,11 @@ export async function searchCity (cidade){
 
     try {
         const response = await fetch(API_URL);
-        const resData = await response.json()
         if (!response.ok) {
+            const errorData = await response.json();
             throw new Error(errorData.message || "Ocorreu um erro ao buscar os dados.");
         }
+        const resData = await response.json()
         
         const {main , weather , wind , name , sys , visibility} = resData;
 
@@ -28,12 +29,13 @@ export async function searchCity (cidade){
         };
         
         console.log(resData);
-        console.log(processedData)
+        console.log(processedData);
         return processedData;
          
     }
     catch (error) {
-        console.error(error)
+        console.error(error);
+        throw error;
     }
     
 
