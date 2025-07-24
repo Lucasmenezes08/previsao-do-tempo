@@ -37,7 +37,7 @@ export default function WeatherProvider ({children}){
     }, [])
 
 
-    /*
+    
     useEffect (() => {
         const weatherInterval = setInterval(() => {
             handleFetchWeather(currentlyCity);
@@ -46,7 +46,7 @@ export default function WeatherProvider ({children}){
 
         return () => clearInterval(weatherInterval)
     } , [currentlyCity]);
-    */
+    
 
     const value = {
         weatherData,
