@@ -1,7 +1,7 @@
 import { useContext, useRef } from "react";
 import { WeatherContext } from "../../../store/weatherContext";
-import { searchCity } from "../../../services/weatherService";
 import { IoIosSearch } from "react-icons/io";
+import '../input/input.scss'
 
 
 export default function Input (){
@@ -17,16 +17,16 @@ export default function Input (){
     }
 
     return (
-        <section>
+        <section className="input-section">
             <input 
                 type="text"
                 ref={inputValue}
                 placeholder="Insira a cidade"
                 maxLength={30}
                 minLength={2}
-                defaultValue={'recife'}
+                className="input-camp"
             />
-            <button onClick={handleSearch}><IoIosSearch /></button>
+            <button className="input-btn" onClick={handleSearch}><IoIosSearch /></button>
         </section>
     )
 

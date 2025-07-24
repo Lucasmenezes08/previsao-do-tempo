@@ -1,0 +1,42 @@
+@use '../../../styles/variables';
+
+.input-section { 
+    width: 93%;
+    height: 7vh;
+    display: flex;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: solid 1px rgb(119, 119, 119);
+    border-radius: 10px;
+    overflow: hidden;
+   
+
+    input {
+        border: none;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        background-color: variables.$input-primary-color;
+        color: variables.$font-primary-color; 
+        outline: none;
+        font-size: 1rem;
+        border-radius: 10px 0 0 10px;
+        padding-left: 20px; 
+    }
+
+    .input-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        background-color: variables.$input-primary-color;
+        color: variables.$font-primary-color;
+        height: 100%;
+        border: none;
+        padding-left : 15px ;
+        cursor: pointer;
+        border-radius: 0 10px 10px 0;
+        padding: 0 15px;
+
+    }
+}

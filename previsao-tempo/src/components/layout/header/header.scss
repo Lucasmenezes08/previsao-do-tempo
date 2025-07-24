@@ -1,0 +1,98 @@
+@use '../../../styles/variables';
+
+
+header { 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    h1{
+        color: variables.$font-primary-color; 
+        padding-top: 12px;
+        font-size: variables.$font-h1-size;
+        text-align: center;
+        
+    }
+
+    .header-input-section {
+        display: flex;
+        justify-content: center;
+    }
+
+    .header-weather-section {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2rem;
+
+
+        .weather-city {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            h2{
+                font-size: 2.3rem;
+                color: variables.$font-primary-color;
+            }
+            p{
+                font-size: 1.2rem;
+                color: variables.$font-second-color;
+                margin-bottom: 2rem;
+            }
+        }
+
+        .weather-temperatura {
+            display: flex;
+
+            p{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 4.2rem;
+                color: variables.$font-primary-color;
+                font-weight: 800;
+
+                .weather-span {
+                    font-size: 3.5rem;
+                    padding-left: 5px;
+                }
+
+            }
+
+        }
+
+    }
+
+    .header-weather-max-min-section{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 10px;
+
+        .weather-temperatura-min {
+            color: variables.$font-primary-color;
+            
+
+            p{
+                font-weight: 200;
+            }
+        }
+
+        .weather-temperatura-max {
+            color: variables.$font-primary-color;
+
+            p{
+                font-weight: 200;
+            }
+        }   
+
+
+
+    }
+
+
+    
+}

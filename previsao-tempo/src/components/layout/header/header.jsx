@@ -1,38 +1,39 @@
 import { useContext, useState } from "react";
 import Input from "../../common/input/input";
 import { WeatherContext } from "../../../store/weatherContext";
+import '../header/header.scss'
 
 export default function Header (){
     const {weatherData, isLoading ,error, handleFetchWeather} = useContext(WeatherContext);
 
     return (
-        <section>
-            <h1>Previsão do tempo</h1>
+        <header>
+            <h1>Tempo</h1>
             
-            <section>
+            <section className="header-input-section">
                 <Input/>
             </section>
 
-            <section>
-                {!isLoading && !error && weatherData && ( <h2>{weatherData.cidade}</h2>)}
-                {!isLoading && !error && weatherData && ( <p>{weatherData.descricao}</p>)}
+            <section className="header-weather-section">
+                <section className="weather-city">
+                    {!isLoading && !error && weatherData && ( <h2>{weatherData.cidade}</h2>)}
+                    {!isLoading && !error && weatherData && ( <p>{weatherData.descricao}</p>)}  
+                </section>
+                
+                <section className="weather-temperatura">
+                    {!isLoading && !error && weatherData && ( <p>{weatherData.temperatura.toFixed(0)}<span className="weather-span">º</span></p>)}
+                </section>
             </section>
 
 
-
-            <section>
-                {!isLoading && !error && weatherData && ( <p>{weatherData.temperatura.toFixed(0)}º</p>)}
-            </section>
-
-
-            <section>
-                <section>
+            <section className="header-weather-max-min-section">
+                <section className="weather-temperatura-min">
                     {!isLoading && !error && weatherData && ( <p>{weatherData.temperatura_min.toFixed(1)}º</p>)}
                     <p>min</p>
                 </section>
 
 
-                <section>
+                <section className="weather-temperatura-max">
                     {!isLoading && !error && weatherData && ( <p>{weatherData.temperatura_max.toFixed(1)}º</p>)}
                     <p>max</p>
                 </section>
@@ -69,7 +70,6 @@ export default function Header (){
                 </section>
 
             </section>
-
-        </section>
+        </header>
     )
 }
