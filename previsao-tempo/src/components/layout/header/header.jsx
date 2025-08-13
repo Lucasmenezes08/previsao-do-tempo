@@ -3,6 +3,7 @@ import Input from "../../common/input/input";
 import { WeatherContext } from "../../../store/weatherContext";
 import '../header/header.scss'
 import Loading from "../../common/loading/loading";
+import Error from "../../common/error/error";
 
 
 export default function Header (){
@@ -10,7 +11,7 @@ export default function Header (){
 
     if (isLoading) {
         return <Loading/>
-    }
+    } 
 
     return (
         <header>
@@ -21,7 +22,11 @@ export default function Header (){
                 <Input/>
             </section>
 
+            
+
             <section className="header-weather-section">
+                {!weatherData && (<Error message={error}/>)}
+
                 <section className="weather-city">
                     {!isLoading && !error && weatherData && ( <h2>{weatherData.cidade}</h2>)}
                     {!isLoading && !error && weatherData && ( <p>{weatherData.descricao}</p>)}  
