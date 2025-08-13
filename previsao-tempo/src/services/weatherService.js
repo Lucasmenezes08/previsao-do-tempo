@@ -6,7 +6,7 @@ export async function searchCity (cidade){
         const response = await fetch(API_URL);
         if (!response.ok) {
             const errorData = await response.json();
-            throw new Error(errorData.message || "Ocorreu um erro ao buscar os dados.");
+            throw new Error("Cidade não encontrada. Por favor, digite novamente.");
         }
         const resData = await response.json()
         
